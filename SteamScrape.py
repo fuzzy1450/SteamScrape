@@ -73,6 +73,13 @@ async def collectData(DataLimit = 10000):
 			
 			appArray = [appNameSteralized, appData["appid"], appData["positive"], appData["negative"], ownerRangeSteralized, appData["ccu"]]
 			genres = appData["genre"].split(", ")
+			
+			while(len(genres) < 3):
+				genres+= [""]
+				
+			if(len(genres) > 3):
+				genres = genres[0:3]
+				
 			appArray += genres
 
 
